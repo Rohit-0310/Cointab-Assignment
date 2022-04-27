@@ -47,7 +47,6 @@ const CompanyX = () => {
         let filterPin = pincode.filter((e)=>{
             return +pin === e.CustomerPincode
         })
-        // filterZone(filterPin)
 
         let zone = filterPin.map((e) => {
                 return e.Zone;
@@ -56,32 +55,29 @@ const CompanyX = () => {
         let priz = company.filter((e)=>{
             return filterzone === e.Zone && ratetype === e.RateType;
         })
-        // checkprice(priz);
+        
 
         let first_Price = priz.map((e) =>{
             return e.First
         });
+        let finalPrice  = +first_Price
+        console.log("finalPrice",finalPrice)
 
         let afterAdd_Price = priz.map((e) =>{
             return e.Every_Additional
         });
-
-
-        let firstKg_Price  = +first_Price.join("")
         let After_Add_Price = +afterAdd_Price.join("")
 
         let weightinto2 = Math.floor(2 * weight);
 
-        let finalPrice = firstKg_Price;
         for(let i = 1; i < weightinto2; i++){
             finalPrice +=After_Add_Price
         }
 
 
         setDisplay(finalPrice.toFixed(2))
-        console.log(finalPrice.toFixed(2));
+        // console.log(finalPrice.toFixed(2));
 
-        
     }
 
 
@@ -96,6 +92,7 @@ const CompanyX = () => {
             <Input className="Input_box" type="number" placeholder="Weight In Kg" onChange={(e) => setWeight(e.target.value)}/>
             <br />
             <select defaultValue="RateType" className="select_box" onChange={(e) => setRatetype(e.target.value) } >
+                <option display="disabled"></option>
                 <option value="Forward">Forward</option>
                 <option value="Forward & RTO">Forward & RTO</option>
             </select>
