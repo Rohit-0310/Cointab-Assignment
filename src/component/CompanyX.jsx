@@ -103,7 +103,7 @@ const CompanyX = () => {
             <Button className="btn" onClick={btnSubmit}>Check Final Price</Button>
         </form>
 
-        <h2 className="display">Expected Rate:- {display}</h2>
+        <h2 className="display">Expected Rate:-► {display}</h2>
 
     </div>
   )
