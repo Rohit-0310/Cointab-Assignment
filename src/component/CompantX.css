@@ -1,0 +1,29 @@
+.div_main{
+    padding-top: 30px;
+    background-color: #A1887F;
+}
+
+.Input_box{
+    width: 220px;
+    height: 30px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    color: #1E88E5;
+}
+
+.select_box{
+    width: 250px;
+    height: 30px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+
+}
+
+.btn{
+    width: 150px;
+    height: 40px;
+}
+
+.display{
+    color: #000000
+}
