@@ -35,7 +35,7 @@ const CompanyX = () => {
     }
 
 
-      useEffect(()=>{
+    useEffect(()=>{
         getPinCodeData()
         getCompanyData()
     },[]);
@@ -55,7 +55,7 @@ const CompanyX = () => {
         let priz = company.filter((e)=>{
             return filterzone === e.Zone && ratetype === e.RateType;
         })
-        
+        console.log("priz",priz)
 
         let first_Price = priz.map((e) =>{
             return e.First
@@ -67,16 +67,18 @@ const CompanyX = () => {
             return e.Every_Additional
         });
         let After_Add_Price = +afterAdd_Price.join("")
+        console.log("After_Add_Price",After_Add_Price)
 
         let weightinto2 = Math.floor(2 * weight);
+        console.log("weightinto2",weightinto2)
 
         for(let i = 1; i < weightinto2; i++){
             finalPrice +=After_Add_Price
+            console.log(finalPrice.toFixed(2));
         }
 
 
         setDisplay(finalPrice.toFixed(2))
-        // console.log(finalPrice.toFixed(2));
 
     }
 
@@ -84,6 +86,7 @@ const CompanyX = () => {
 
   return (
     <div className="div_main">
+        <div>
 
 
         <form>
@@ -102,6 +105,7 @@ const CompanyX = () => {
 
         <h2 className="display">Expected Rate:-► {display}</h2>
 
+        </div>
     </div>
   )
 }
